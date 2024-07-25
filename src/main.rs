@@ -16,6 +16,7 @@ use crate::controllers::users::{dashboard_page, login_page, login_user, register
 use crate::models::users::{Users, LoginForm};
 use crate::models::app_state;
 use log::info;
+use actix_files as fs;
 
 use std::sync::Mutex;
 use actix_session::config::PersistentSession;
@@ -60,6 +61,7 @@ async fn main() -> std::io::Result<()> {
                     .cookie_same_site(SameSite::Lax)
                     .build()
             )
+            .service(fs::Files::new("/static", "./static").show_files_listing())
             .route("/dashboard", web::get().to(dashboard_page))
             .route("/login", web::get().to(login_page))
             .route("/login", web::post().to(login_user))
@@ -83,27 +85,3 @@ async fn main() -> std::io::Result<()> {
 }
 
 
-
-
-// #[actix_web::main]
-// async fn main() -> std::io::Result<()> {
-//     let app_state = web::Data::new(AppState {
-//         db_connection: Mutex::new(establish_connection()),
-//     });
-
-//     HttpServer::new(move || {
-//         App::new()
-//             .app_data(app_state.clone())
-//             .wrap(CookieSession::signed(&[0; 32]).secure(false))
-//             .route("/", web::get().to(default_handler))
-//             .route("/register", web::get().to(register_page))
-//             .route("/register", web::post().to(register_user))
-//             .route("/login", web::get().to(login_page))
-//             .route("/login", web::post().to(login_user))
-//             .route("/dashboard", web::get().to(dashboard_page))
-//             .route("/update_user", web::put().to(update_user))
-//     })
-//     .bind("127.0.0.1:8080")?
-//     .run()
-//     .await
-// }
