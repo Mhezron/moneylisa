@@ -1,7 +1,90 @@
+/* General styles */
 body {
-    background-color: antiquewhite;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    /* background-color: antiquewhite; */
+    background: url('https://cdn.pixabay.com/photo/2017/09/07/08/57/money-coin-investment-business-2724241_1280.jpg') no-repeat center center fixed;
 }
 
-h1{
+/* Navbar styles */
+nav {
+    background-color: #333;
+    color: white;
+    padding: 0.5em 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 1em;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5em 1em;
+}
+
+nav ul li a:hover {
+    background-color: #575757;
+    border-radius: 5px;
+}
+
+/* Main content styles */
+main {
+    padding: 2em;
+    text-align: center;
+}
+
+h1 {
     color: green;
+    margin-bottom: 1em;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 0.75em 1.5em;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1em;
+    margin: 0.5em 0;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Footer styles */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    margin: 0;
 }

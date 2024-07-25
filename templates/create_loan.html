@@ -1,0 +1,28 @@
+<!-- In create_loan.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Loan</title>
+</head>
+<body>
+    <h1>Create Loan</h1>
+    <form action="/create-loan" method="post">
+        <label for="name">Loan Name:</label>
+        <input type="text" id="name" name="name" required><br>
+        
+        <label for="amount">Amount:</label>
+        <input type="number" id="amount" name="amount" required><br>
+
+        <label for="status">Status:</label>
+        <select id="status" name="status">
+            <option value="pending">Pending</option>
+            <option value="approved">Approved</option>
+            <option value="rejected">Rejected</option>
+        </select><br>
+
+        <button type="submit">Create Loan</button>
+    </form>
+</body>
+</html>

@@ -1,5 +1,4 @@
-use chrono::NaiveDate;
-use chrono::NaiveDateTime;
+use chrono::{NaiveDate, NaiveDateTime};
 use diesel::prelude::*;
 use serde::{Deserialize, Serialize};
 use crate::schema::loans;
@@ -32,3 +31,4 @@ pub struct NewLoan {
     pub status: Option<String>,
     pub interest_rate: Option<f64>,
 }
+

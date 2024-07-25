@@ -1,0 +1,57 @@
+<!-- In dashboard.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/static/dashboard.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo">Dashboard</h1>
+            <ul class="nav-links">
+                <li><a href="/home">Home</a></li>
+                <li><a href="/profile">Profile</a></li>
+                <li><a href="/settings">Settings</a></li>
+                <li><a href="/logout">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="container">
+            <section class="user-info">
+                <h2>Welcome, User!</h2>
+                <p>Here you can manage your account and view your recent activities.</p>
+                <!-- User Info -->
+                <div class="info-card">
+                    <h3>Account Summary</h3>
+                    <p><strong>Email:</strong> {{ email }}</p>
+                    <p><strong>Member Since:</strong> {{ member_since }}</p>
+                    <p><strong>Recent Activity:</strong> {{ recent_activity }}</p>
+                </div>
+            </section>
+
+            <section class="actions">
+                <h2>Quick Actions</h2>
+                <div class="action-buttons">
+                    <a href="/create-loan" class="btn">Create Loan</a>
+                    <a href="/view-loans" class="btn">View Loans</a>
+                    <a href="/update-info" class="btn">Update Info</a>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Moneylisa. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
